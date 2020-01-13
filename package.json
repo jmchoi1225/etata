@@ -1,0 +1,24 @@
+{
+  "name": "etata",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmchoi1225/etata.git"
+  },
+  "author": "Chanhui Bae, JeongMin Choi",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/jmchoi1225/etata/issues"
+  },
+  "homepage": "https://github.com/jmchoi1225/etata#readme"
+}

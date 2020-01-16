@@ -1,6 +1,45 @@
-.topnav{
-    background-color : blue;
+div {
+    border-style : solid;
 }
-#checker{
-    background-color : red;
+span{
+    border-style : dashed;
+}
+.topnav{
+    width : 100%;
+    position : fixed;
+    top : 0;
+    left : 0;
+}
+.topnav h4{
+    padding: 5px;
+    display: block;
+    text-align : center;
+}
+.content{
+    margin : 0 auto;
+    margin-top : 80px;
+}
+.group{
+    margin : 0 auto;
+    padding : 10px;
+    height : 100px;
+    width : 450px;
+}
+.first{
+    float : left;
+    width : 150px;
+    text-align :center;
+}
+.groupContainer{
+    margin : 2px 0;
+}
+.others{
+    float : left;
+    width : 250px;
+}
+.others button{
+    margin : 0 2px;
+}
+hr{
+    margin : 1px;
 }

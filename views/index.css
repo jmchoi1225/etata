@@ -51,9 +51,8 @@ div{
 #main_timetable> table{
     border:0.5px solid gray;
     border-collapse: collapse;
-    vertical-align: middle;
 }
-#main_timetable>td{
+#main_timetable> td{
     height: 40px;
     border:0.5px solid gray;
     border-collapse: collapse;
@@ -69,10 +68,12 @@ div{
     height: 20px;
     border:0.5px solid gray;
     border-collapse: collapse;
+    font-size: x-small;
 }
-
-#selected_timetable_line{
-    vertical-align: middle;
+.xxs_w{
+    font-size: xx-small;
+    text-align: right;
+    vertical-align: top;
 }
 #selected_timetable_line>table{
     margin: 5px;

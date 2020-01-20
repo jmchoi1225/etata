@@ -1,12 +1,12 @@
 
 div{
     border-collapse: collapse;
-    border : 0.5px solid blue;
+    border : 2px solid blue;
 }
 
 /******top******/
 .topnav{
-    width : 100%;
+    width : 1000px;
     position : absolute;
     top : 0;
     left : 0;
@@ -29,7 +29,7 @@ div{
 #subject_groups{
     text-align: left;
 }
-#subject_groups> h4{
+#subject_groups>{
     background-color: slategray;
 }
 #subject_groups> li{
@@ -51,26 +51,24 @@ div{
     left: 250px;
 }
 #main_timetable{
-    margin: 30px;
-    border:0.5px solid gray;
-    border-collapse: collapse;
     vertical-align: middle;
-}
-#main_timetable> th, td{
-    border:0.5px solid gray;
-    border-collapse: collapse;
 }
 #main_timetable>td{
     height: 40px;
-    vertical-align: top;
+    border:0.5px solid gray;
+    border-collapse: collapse;
 }
 #mt_0{
     width: 20px;
     height: 20px;
+    border:0.5px solid gray;
+    border-collapse: collapse;
 }
 .mts{
     width: 60px;
     height: 20px;
+    border:0.5px solid gray;
+    border-collapse: collapse;
 }
 
 #selected_timetable{
@@ -98,6 +96,8 @@ div{
 }
 .timetables{
     margin: 2px;
+    box-sizing : border-box;
+    width : 60px;
 }
 .timetables> table{
     border-collapse: collapse;

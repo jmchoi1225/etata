@@ -1,9 +1,9 @@
-
+/*
 div{
     border-collapse: collapse;
     border : 2px solid blue;
 }
-
+*/
 /******top******/
 .topnav{
     width : 1250px;
@@ -28,11 +28,20 @@ div{
 }
 #subject_groups{
     text-align: left;
+    border-top: 1px solid #444444;
     border-bottom: 1px solid #444444;
     border-collapse: collapse;
 }
-#subject_groups> h4{
-    background-color: slategray;
+#subject_groups{
+    background-color: #eeeeee;
+}
+#subject_groups> ul{
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+#mid_w{
+    font-size: medium;
+    
 }
 #timetable_helper{
     width: 150px;
@@ -43,7 +52,7 @@ div{
 /******center******/
 #centerbg{
     box-sizing:border-box;
-    width: 450px;
+    width: 350px;
     position: absolute;
     top: 100px;
     left: 250px;
@@ -90,9 +99,9 @@ div{
 #rightbg{
     position: absolute;
     top: 100px;
-    left: 750px;
+    left: 650px;
     box-sizing : border-box;
-    width : 500px;
+    width : 600px;
 }
 #timetables> table{
     margin: 3px;

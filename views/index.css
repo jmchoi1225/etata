@@ -1,29 +1,71 @@
-table{
-    border-style : solid;
+div{
+    border-collapse: collapse;
 }
-#ETATAtitle{
-    margin: 30px;
-    background-color: darkgray;
+/******top******/
+.topnav{
+    width : 100%;
+    height: 80;
+    position : absolute;
+    top : 0;
+    left : 0;
+    background-color: gray;
 }
-#Selected_timetable{
-    margin: 30px;
+.topnav>h1{
+    padding: 5px;
+    display: block;
+    text-align : center;
+}
+
+/******left******/
+.leftbg{
+    box-sizing:border-box;
+    width: 200px;
+    position: absolute;
+    top : 100px;
+    left : 10px;
+}
+#subject_groups{
+    text-align: left;
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+}
+#timetable_helper{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/******center******/
+.centerbg{
+    position: absolute;
+    top: 100px;
+    left: 250px;
 }
 #main_timetable{
     margin: 30px;
+}
+#main_timetable> table, th, td{
+    border:0.5px solid darkgray;
+    border-collapse: collapse;
 }
 #main_timetable>td{
     text-align: right;
     vertical-align: top;
 }
-.timetables{
-    margin: 30px;
+#selected_timetable{
+    border:2px solid darkgray;
 }
-/*
-margin
-border
-padding
-width
-height
-box-sizing
-backgraound
-*/
+#selected_timetable>table{
+    border:0.5px solid gray;
+}
+
+/******right******/
+.rightbg{
+    position: absolute;
+    top: 100;
+    right: 10px;
+    box-sizing : border-box;
+    width : 600px;
+}
+.timetables{
+    margin: 10px;
+}

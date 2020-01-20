@@ -9,93 +9,19 @@
     </head>
 
     <body>
-        <div id= "ETATAtitle">
-            <h1>&nbsp;ETATA</h1>
+        <div class = "topnav">
+            <h1>ETATA</h1>
         </div>
-        <div id= "subject_groups">
+        <div class= "leftbg" id= "subject_groups">
             <ul>
-                <p>Subject Groups</p>
+                <h4>Subject Groups</h4>
                 <li>Algorithm</li>
             </ul>
         </div>
-        <div id= "timetable_helper">
-            <!--check type-->
-            <input type= "button" id= "timetable_helper_button" onclick= "open_window()" value= "수강신청 도우미">
-        </div>
-        <div id= "Selected_timetable">
-            <table>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>    
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>    
-        <div id="main_timetable">  
+
+        <input type= "button" class= "leftbg" id= "timetable_helper" onclick= "open_window()" value= "수강신청 도우미">
+        
+        <div class= "centerbg" id="main_timetable">  
             <!--timetable-->    
             <table>   
                 <tr>
@@ -196,10 +122,88 @@
                     <td></td>
                 </tr>
             </table>
-        </div>   
+        </div>
+
+        <div class= "centerbg" id= "selected_timetable">
+            <table>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class= "centerbg">
+            <p>원하는 시간표를 왼쪽으로 드래그하세요.</p>
+        </div>
 
         <!--timetable list and filter--> 
-        <div class= "timetables">
+        <div class= "rightbg" class= "upper_rightbg" class= "timetables">
             <table>
                     <th></th>
                     <th></th>
@@ -272,7 +276,8 @@
                 </tr>
             </table>
         </div> 
-        <div class= "timetables">
+        
+        <div class= "rightbg" class= "upper_rightbg" class= "timetables">
             <table>
                     <th></th>
                     <th></th>
@@ -345,5 +350,12 @@
                 </tr>
             </table>
         </div> 
+        <div class= "rightbg" class= "middle_rightbg" > 
+            <input type= "button" id= "check_button" onclick= "open_window()" value= "선택">
+        </div>
+        <div  class= "rightbg" class= "lower_rightbg">
+            <input type= "button" class= "add_button" onclick= "open_window()" value= "추가">
+            <input type= "button" class= "add_button" onclick= "open_window()" value= "추가">
+        </div>
     </body>
 </html>

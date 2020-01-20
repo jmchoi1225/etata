@@ -1,10 +1,11 @@
 div{
     border-collapse: collapse;
+    border : 0.5px solid blue;
 }
 /******top******/
 .topnav{
     width : 100%;
-    height: 80;
+    height: 60;
     position : absolute;
     top : 0;
     left : 0;
@@ -17,7 +18,7 @@ div{
 }
 
 /******left******/
-.leftbg{
+#leftbg{
     box-sizing:border-box;
     width: 200px;
     position: absolute;
@@ -26,7 +27,12 @@ div{
 }
 #subject_groups{
     text-align: left;
+    border-collapse: collapse;
+}
+#subject_groups>table{
     border-top: 1px solid #444444;
+}
+#subject_groups>th, td{
     border-bottom: 1px solid #444444;
 }
 #timetable_helper{
@@ -35,7 +41,7 @@ div{
 }
 
 /******center******/
-.centerbg{
+#centerbg{
     position: absolute;
     top: 100px;
     left: 250px;
@@ -44,28 +50,54 @@ div{
     margin: 30px;
 }
 #main_timetable> table, th, td{
-    border:0.5px solid darkgray;
+    border:0.5px solid gray;
     border-collapse: collapse;
 }
 #main_timetable>td{
+    height: 20;
     text-align: right;
     vertical-align: top;
 }
+#main_timetable> th{
+    width: 60;
+    height: 40;
+}
+#mt_0{
+    width: 20;
+}
+
 #selected_timetable{
+    border-collapse: collapse;
     border:2px solid darkgray;
 }
 #selected_timetable>table{
-    border:0.5px solid gray;
+    margin: 10;
+    border-collapse: collapse;
+    border:0.5px solid #444444;
 }
-
+#selected_timetable>th, td{
+    height: 10;
+    width : 15;
+    border-collapse: collapse;
+    border:0.5px solid #444444;
+}
 /******right******/
-.rightbg{
+#rightbg{
     position: absolute;
     top: 100;
-    right: 10px;
+    left: 900px;
     box-sizing : border-box;
-    width : 600px;
+    width : 500px;
 }
-.timetables{
-    margin: 10px;
+.timetables> table{
+    margin: 2px;
+    border-collapse: collapse;
+    border:0.5px solid #444444;
 }
+.timetables> th, td{
+    height: 8;
+    width : 12;
+    border-collapse: collapse;
+    border:0.5px solid #444444;
+}
+

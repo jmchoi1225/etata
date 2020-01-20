@@ -6,7 +6,7 @@ div{
 
 /******top******/
 .topnav{
-    width : 1000px;
+    width : 1300px;
     position : absolute;
     top : 0;
     left : 0;
@@ -48,8 +48,9 @@ div{
     top: 100px;
     left: 250px;
 }
-#main_timetable{
-    vertical-align: middle;
+#main_timetable> table{
+    border:0.5px solid gray;
+    border-collapse: collapse;
 }
 #main_timetable>td{
     height: 40px;
@@ -95,7 +96,6 @@ div{
     margin: 3px;
     border-collapse: collapse;
     border:0.5px solid #444444;
-    display: inline;
 }
 #timetables> th, td{
     height: 8px;

@@ -28,13 +28,11 @@ div{
 }
 #subject_groups{
     text-align: left;
-}
-#subject_groups>{
-    background-color: slategray;
-}
-#subject_groups> li{
     border-bottom: 1px solid #444444;
     border-collapse: collapse;
+}
+#subject_groups> h4{
+    background-color: slategray;
 }
 #timetable_helper{
     width: 150px;
@@ -71,16 +69,15 @@ div{
     border-collapse: collapse;
 }
 
-#selected_timetable{
-    box-sizing: border-box;
-    width: 90;
+#selected_timetable_line{
+    vertical-align: middle;
 }
-#selected_timetable>table{
+#selected_timetable_line>table{
     margin: 5px;
     border-collapse: collapse;
     border:0.5px solid #444444;
 }
-#selected_timetable>th, td{
+#selected_timetable_line>th, td{
     height: 10px;
     width : 15px;
     border-collapse: collapse;
@@ -94,16 +91,13 @@ div{
     box-sizing : border-box;
     width : 500px;
 }
-.timetables{
-    margin: 2px;
-    box-sizing : border-box;
-    width : 60px;
-}
-.timetables> table{
+#timetables> table{
+    margin: 3px;
     border-collapse: collapse;
     border:0.5px solid #444444;
+    display: inline;
 }
-.timetables> th, td{
+#timetables> th, td{
     height: 8px;
     width : 12px;
     border-collapse: collapse;

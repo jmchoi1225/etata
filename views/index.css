@@ -1,0 +1,29 @@
+table{
+    border-style : solid;
+}
+#ETATAtitle{
+    margin: 30px;
+    background-color: darkgray;
+}
+#Selected_timetable{
+    margin: 30px;
+}
+#main_timetable{
+    margin: 30px;
+}
+#main_timetable>td{
+    text-align: right;
+    vertical-align: top;
+}
+.timetables{
+    margin: 30px;
+}
+/*
+margin
+border
+padding
+width
+height
+box-sizing
+backgraound
+*/

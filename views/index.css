@@ -37,42 +37,48 @@ div{
     border-collapse: collapse;
 }
 #timetable_helper{
+    width: 150px;
     position: relative;
     left : 40px;
 }
 
 /******center******/
 #centerbg{
+    box-sizing:border-box;
+    width: 450px;
     position: absolute;
     top: 100px;
     left: 250px;
 }
 #main_timetable{
     margin: 30px;
+    border:0.5px solid gray;
+    border-collapse: collapse;
+    vertical-align: middle;
 }
 #main_timetable> th, td{
     border:0.5px solid gray;
     border-collapse: collapse;
 }
+#main_timetable>td{
+    height: 40px;
+    vertical-align: top;
+}
 #mt_0{
-    width: 40px;
+    width: 20px;
     height: 20px;
 }
 .mts{
     width: 60px;
     height: 20px;
 }
-#main_timetable>td{
-    height: 40px;
-    text-size-adjust: 10px;
-    vertical-align: top;
-}
 
 #selected_timetable{
-    display: inline;
+    box-sizing: border-box;
+    width: 90;
 }
 #selected_timetable>table{
-    margin: 10px;
+    margin: 5px;
     border-collapse: collapse;
     border:0.5px solid #444444;
 }
@@ -86,13 +92,12 @@ div{
 #rightbg{
     position: absolute;
     top: 100px;
-    left: 800px;
+    left: 750px;
     box-sizing : border-box;
     width : 500px;
 }
 .timetables{
     margin: 2px;
-    display: inline;
 }
 .timetables> table{
     border-collapse: collapse;

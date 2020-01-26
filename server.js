@@ -31,16 +31,6 @@ http.createServer(function (req, res) {
       var fileStream = fs.createReadStream(jsPath);
       res.writeHead(200, {"Content-Type": "text/javascript"});
       fileStream.pipe(res);
-  }else{
-    var filename = "./views/" + req.url;
-    fs.readFile(filename, function(err, data) {
-      if(err){
-        throw err;
-      }
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
   }
   
 }).listen(8080);

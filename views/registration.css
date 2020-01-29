@@ -1,6 +1,5 @@
 #header{
     width : 100%;
-    position : fixed;
     top : 0;
     left : 0;
     text-align : center;
@@ -11,7 +10,6 @@
 }
 #content{
     margin : 0 auto;
-    margin-top : 80px;
 }
 .group{
     margin : 0 auto;

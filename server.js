@@ -1,6 +1,7 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
+var mysql = require('mysql');
 
 http.createServer(function (req, res) {
   if(req.url.match("\.html$")){
@@ -17,7 +18,6 @@ http.createServer(function (req, res) {
       var fileStream = fs.createReadStream(cssPath, "UTF-8");
       res.writeHead(200, {"Content-Type": "text/css"});
       fileStream.pipe(res);
-
   }else if(req.url.match("\.js$")){
       var jsPath = "./views/" + req.url;
       var fileStream = fs.createReadStream(jsPath);

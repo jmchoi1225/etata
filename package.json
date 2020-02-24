@@ -20,7 +20,8 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "build": "webpack --mode development"
+    "build": "webpack --mode development",
+    "watch": "webpack --watch --mode development" 
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,9 @@
 import Groups from './class/groups.js';
 import Undo from './class/undo.js';
 import Timetable from './class/timetable.js';
+import GroupsComponent from './component/groupsComponent';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const copyToClipboard = str => {
     const el = document.createElement('textarea');  // Create a <textarea> element
@@ -72,13 +75,10 @@ $(document).ready(function(){
     timetable.setData(groups);
     timetable.processOverlap();
 
-    console.log(timetable);
-    console.log(groups);
-
 
     //그룹에 해당하는 것을 보여줌
                 
-    document.getElementById('content').innerHTML += groups.print();
+    ReactDOM.render(<GroupsComponent groups = {groups}/>, document.getElementById('content'));
     
     // course 버튼 클릭 시
     $(".course").click(function(){

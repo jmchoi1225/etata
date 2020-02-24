@@ -88,36 +88,4 @@ export default class Groups{
         }
         return this.getGroup(crsIdx['group']).getCourse(crsIdx['rank'],crsIdx['idx']);
     }
-    print(){
-        let output = '';
-        for(let i =0; i<this.getLength(); i++){
-            const curGroup = this.data[i];
-            output +=  
-                '<div class = "group">' +
-                    '<div class = "first">' +
-                        '<div class = "groupContainer">' +curGroup.name+'</div>' +
-                        '<hr>'+
-                        '<div class = "groupContainer">'+
-                            '<button class = "course">'+curGroup.courses.getCourse(curGroup.firstIdx[0], curGroup.firstIdx[1]).id+'</button>'+
-                        '</div>'+
-                        '<div class = "groupContainer">'+
-                            '<button class = "success" name ="groupIndex" value = "' + i+ '">성공</button>'+
-                            '<button class = "fail" name ="groupIndex" value = "' + i+ '">실패</button>'+
-                        '</div>'+
-                    '</div>'+
-                    '<div class = "others">';
-                        
-            for(let j = 0; j<3; j++){
-                output +='<div class = "groupContainer">';
-                for(let k = 0; k< curGroup.courses.getLength(j); k++){
-                    output +='<button class = "course" name="crsIndex" value='+[i,j,k]+'>' +curGroup.courses.getCourse(j,k).id+'</button>';
-                }
-                output += '</div>';
-            }
-            output += 
-                    '</div>' +
-                    '</div>';
-        }
-        return output;
-    }
 }

@@ -5,7 +5,7 @@ var mysql = require('mysql');
 
 http.createServer(function (req, res) {
   if(req.url.match("\.html$")){
-    var htmlPath = "./views/" + req.url;
+    var htmlPath = "./" + req.url;
     fs.readFile(htmlPath, "UTF-8", function(err, data){
       if(err){
         throw err;
@@ -14,12 +14,12 @@ http.createServer(function (req, res) {
       res.end(data);
     });
   }else if(req.url.match("\.css$")){
-      var cssPath = "./views/" + req.url;
+      var cssPath = "./" + req.url;
       var fileStream = fs.createReadStream(cssPath, "UTF-8");
       res.writeHead(200, {"Content-Type": "text/css"});
       fileStream.pipe(res);
   }else if(req.url.match("\.js$")){
-      var jsPath = "./views/" + req.url;
+      var jsPath = "./" + req.url;
       var fileStream = fs.createReadStream(jsPath);
       res.writeHead(200, {"Content-Type": "text/javascript"});
       fileStream.pipe(res);

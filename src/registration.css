@@ -23,7 +23,7 @@
     width : 150px;
     text-align :center;
 }
-.others{
+.courses{
     float : left;
     margin-left : 10px; 
     width : 250px;
@@ -36,4 +36,10 @@
 }
 hr{
     margin : 1px;
+}
+
+#undoNredo{
+    margin : 2px;
+    padding : 2px;
+    text-align : right;
 }

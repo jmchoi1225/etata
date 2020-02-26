@@ -1,16 +1,16 @@
 class Stack{
     constructor(capacity){
         this.capacity = capacity;
-        this.items = new Array(capacity+1);
+        this.stack = new Array(capacity);
         this.size = 0;
         this.begin = 0;
         this.end = 0;
     }
     getIdx(idx){
-        if(0<=idx && idx<capacity+1) return idx;
-        else if(this.capacity+1<=idx) return idx%(this.capacity+1);
+        if(0<=idx && idx<this.capacity) return idx;
+        else if(this.capacity<=idx) return idx%(this.capacity);
         else if(idx<0){
-            let tmp = capacity+1;
+            let tmp = this.capacity;
             while(tmp < -idx) tmp *= 2;
             return (idx+tmp)%(this.capacity+1);
         }
@@ -28,25 +28,25 @@ class Stack{
     }
     pop(){
         if(!this.empty()){
-            end = getIdx(end-1);
+            this.end = this.getIdx(this.end-1);
             this.size--;
-            return this.stack[end];
+            return this.stack[this.end];
         }
         else return false;
     }
     push(value){//when full, bottom item is removed
         if(this.full()){
-           this.begin = getIdx(begin+1);
+           this.begin = this.getIdx(this.begin+1);
         }
         else{
             this.size++;
         }
-        this.stack[getIdx(this.end)] = value;
-        this.end = getIdx(this.end+1);
+        this.stack[this.getIdx(this.end)] = value;
+        this.end = this.getIdx(this.end+1);
     }
     back(){
         if(!this.empty()){
-            return this.stack[getIdx(end-1)];
+            return this.stack[this.getIdx(this.end-1)];
         }
         else return false;
     }
@@ -62,17 +62,15 @@ export default class Undo{
         this.undoStack.push(item);
         this.redoStack.clear();
     }
-    execute(crsIdx, success, undo){ //success : true(success) false(fail) undo: true(undo) false(redo) 
-        //need to write code
-    }
     undo(){
         if(this.undoStack.empty()){
             console.log("Undo를 할 수 없습니다.");
             return false;
         } 
         let item = this.undoStack.pop();
-        //undo 처리
+        this.execute(item, true);
         this.redoStack.push(item);
+        return true;
     }
     redo(){
         if(this.redoStack.empty()){
@@ -80,7 +78,11 @@ export default class Undo{
             return false;
         } 
         let item = this.redoStack.pop();
-        //redo 처리
+        this.execute(item, false);
         this.undoStack.push(item);
+        return true;
+    }
+    execute(item, undo){
+        console.log("need to implement execute");
     }
 }

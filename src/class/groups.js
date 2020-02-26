@@ -2,7 +2,7 @@ class Course{
     constructor(id = null, lecTime = null){
         this.id = id;
         this.lecTime = lecTime;
-        this.state = 0;  //state : 0(ok black) 1(fail red) 2(success green) 3(overlapped yellow)
+        this.state = 0;  //state : 0(ok black) 1(fail red) 2(success green)
         this.overlap = 0; //성공 중 겹친 course의 개수
         this.sameTime = new Array();
     }

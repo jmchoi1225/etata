@@ -2,6 +2,7 @@ import Groups from './class/groups.js';
 import Undo from './class/undo.js';
 import Timetable from './class/timetable.js';
 import GroupsComponent from './component/groupsRegistration';
+import Style from './registration.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 

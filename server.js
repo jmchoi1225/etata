@@ -1,4 +1,4 @@
-var http = require('http');
+/*var http = require('http');
 var url = require('url');
 var fs = require('fs');
 var mysql = require('mysql');
@@ -25,4 +25,14 @@ http.createServer(function (req, res) {
       fileStream.pipe(res);
   }
   
-}).listen(8080);
+}).listen(8080);*/
+
+var express = require('express');
+var app = express();
+
+app.use(express.static('dist'));
+
+
+app.listen(3000,()=>{
+  console.log("3000번 port에 http server를 띄웠습니다.");
+})

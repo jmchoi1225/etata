@@ -26,7 +26,7 @@ class Courses extends Component{
                             return <Course groupIdx = {this.props.groupIdx} rank = {rank} idx = {idx} course = {course} key = {idx} />
                         })}
                     </div>)
-                })}
+                })} 
             </div>
         );
         

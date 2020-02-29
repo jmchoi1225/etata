@@ -44,15 +44,20 @@ class Group{
 export default class Groups{
     constructor(jsonInput){
         this.data = new Array();
+    }
+
+    convertJSON2Groups(jsonInput){
         for(let g = 0; g<jsonInput["numGroups"]; g++){
             const curGroup = jsonInput["groups"][g];
             let courses = new Courses();
 
-            for(let crs = 0; crs < curGroup["numCrs"]; crs++){
-                const curCourse = curGroup["courses"][crs];
-                courses.push(curCourse["rank"],new Course(curCourse["id"],curCourse["lecTime"]));
+            for(let rank = 0; rank<3; rank++){
+                for(let crs = 0; crs < curGroup["numCrs"][rank]; crs++){
+                    const curCourse = curGroup["courses"][rank][crs];
+                    courses.push(rank,new Course(curCourse["id"],curCourse["lecTime"]));
+                }
             }
-            this.push(new Group(curGroup["name"],curGroup["firstIdx"] , courses));
+            this.data.push(new Group(curGroup["name"],curGroup["firstIdx"] , courses));
         }
     }
 

@@ -1,28 +1,63 @@
-var http = require('http');
-var url = require('url');
-var fs = require('fs');
-var mysql = require('mysql');
+var express = require('express');
+var app = express();
 
-http.createServer(function (req, res) {
-  if(req.url.match("\.html$")){
-    var htmlPath = "./" + req.url;
-    fs.readFile(htmlPath, "UTF-8", function(err, data){
-      if(err){
-        throw err;
+const jsonInput = {
+  "numGroups": 2,
+  "groups":[
+      {
+          "name" : "운영체제",
+          "firstIdx": [0,0],
+          "numCrs": [1,1,0],
+          "courses": [
+              [
+                  {
+                      "id": "F028",
+                      "lecTime": "수B 금B"
+                  }
+              ],
+              [
+                  {
+                      "id": "F058",
+                      "lecTime": "월C 수C"
+                  }
+              ],
+              [
+
+              ]
+          ]
+      },
+      {
+          "name" : "도분설",
+          "firstIdx": [0,0],
+          "numCrs": [1,1,0],
+          "courses": [
+              [
+                  {
+                      "id": "F001",
+                      "lecTime": "월B 수B"
+                  }
+              ],
+              [
+                  {
+                      "id": "F002",
+                      "lecTime": "월C 수B"
+                  }
+              ],
+              [
+
+              ]
+          ]
       }
-      res.writeHead(200, {"Content-Type": "text/html"});
-      res.end(data);
-    });
-  }else if(req.url.match("\.css$")){
-      var cssPath = "./" + req.url;
-      var fileStream = fs.createReadStream(cssPath, "UTF-8");
-      res.writeHead(200, {"Content-Type": "text/css"});
-      fileStream.pipe(res);
-  }else if(req.url.match("\.js$")){
-      var jsPath = "./" + req.url;
-      var fileStream = fs.createReadStream(jsPath);
-      res.writeHead(200, {"Content-Type": "text/javascript"});
-      fileStream.pipe(res);
-  }
-  
-}).listen(8080);
+  ]
+}
+
+app.use(express.static('dist'));
+
+app.get('/registration',(req,res)=>{
+  res.send(JSON.stringify(jsonInput));
+})
+
+
+app.listen(3000,()=>{
+  console.log("3000번 port에 http server를 띄웠습니다.");
+})

@@ -2,7 +2,7 @@ import Groups from './class/groups.js';
 import Undo from './class/undo.js';
 import Timetable from './class/timetable.js';
 import GroupsComponent from './component/groupsRegistration';
-import JSONGroups from './class/jsonGroups';
+import JSONGroups from './class/simpleGroups';
 import Style from './registration.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -157,68 +157,25 @@ function undoCourseFail(group){
 let timetable = new Timetable();
 let undo = new registrationUndo();
 
-const jsonInput = {
-    "numGroups": 2,
-    "groups":[
-        {
-            "name" : "운영체제",
-            "firstIdx": [0,0],
-            "numCrs": [1,1,0],
-            "courses": [
-                [
-                    {
-                        "id": "F028",
-                        "lecTime": "수B 금B"
-                    }
-                ],
-                [
-                    {
-                        "id": "F058",
-                        "lecTime": "월C 수C"
-                    }
-                ],
-                [
-
-                ]
-            ]
-        },
-        {
-            "name" : "도분설",
-            "firstIdx": [0,0],
-            "numCrs": [1,1,0],
-            "courses": [
-                [
-                    {
-                        "id": "F001",
-                        "lecTime": "월B 수B"
-                    }
-                ],
-                [
-                    {
-                        "id": "F002",
-                        "lecTime": "월C 수B"
-                    }
-                ],
-                [
-
-                ]
-            ]
-        }
-    ]
-}
-
 let groups = new Groups();
-groups.convertJSON2Groups(jsonInput);
 
 $(document).ready(function(){
     //그룹의 정보들을 정리함
-    timetable.setData(groups);
-    timetable.processOverlap();
+    let xhttp = new XMLHttpRequest();
+    
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            groups.convertJSON2Groups(JSON.parse(this.response));
+            timetable.setData(groups);
+            timetable.processOverlap();
+            
+            //그룹에 해당하는 것을 보여줌        
+            ReactDOM.render(<GroupsComponent groups = {groups}/>, document.getElementById('content'));
+        }
+    }
 
-
-    //그룹에 해당하는 것을 보여줌
-                
-    ReactDOM.render(<GroupsComponent groups = {groups}/>, document.getElementById('content'));
+    xhttp.open('GET', '/registration',true);
+    xhttp.send();
 
     // course 버튼 클릭 시
     $(".course").click(function(){

@@ -51,9 +51,17 @@ const jsonInput = {
   ]
 }
 
+let groups;
+
 app.use(express.static('dist'));
 
+app.post('/registration', (req,res)=>{
+  groups = req.body;
+  res.send(groups);
+})
+
 app.get('/registration',(req,res)=>{
+  //send req.body();
   res.send(JSON.stringify(jsonInput));
 })
 

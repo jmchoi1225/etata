@@ -171,43 +171,43 @@ $(document).ready(function(){
             
             //그룹에 해당하는 것을 보여줌        
             ReactDOM.render(<GroupsComponent groups = {groups}/>, document.getElementById('content'));
+
+            // course 버튼 클릭 시
+            $(".course").click(function(){
+                const crsIndex = Groups.str2arrcrsIdx(this.value);
+                const curGroup = groups.getGroup(crsIndex["group"]);
+                copyToClipboard(this.innerHTML);
+                selectCourse(crsIndex,curGroup);
+            });
+
+            //success 버튼 클릭 시
+            $(".success").click(function(){
+                const curGroup = groups.getGroup(this.value);
+                if(curGroup.state == 0){
+                    courseSuccess(curGroup);
+                    undo.add({"group" : this.value, "crsIdx" : curGroup.cur, "function" : "success"});
+                }
+            });
+
+            //fail 버튼 클릭 시
+            $(".fail").click(function(){
+                const curGroup = groups.getGroup(this.value);
+                if(curGroup.state == 0){
+                    courseFail(curGroup);
+                    undo.add({"group" : this.value, "crsIdx" : curGroup.cur, "function" : "fail"});
+                }
+            });
+
+            $("#undo").click(function(){
+                undo.undo()
+            });
+            $('#redo').click(function(){
+                undo.redo()
+            });
         }
     }
 
     xhttp.open('GET', '/registration',true);
     xhttp.send();
-
-    // course 버튼 클릭 시
-    $(".course").click(function(){
-        const crsIndex = Groups.str2arrcrsIdx(this.value);
-        const curGroup = groups.getGroup(crsIndex["group"]);
-        copyToClipboard(this.innerHTML);
-        selectCourse(crsIndex,curGroup);
-    });
-
-    //success 버튼 클릭 시
-    $(".success").click(function(){
-        const curGroup = groups.getGroup(this.value);
-        if(curGroup.state == 0){
-            courseSuccess(curGroup);
-            undo.add({"group" : this.value, "crsIdx" : curGroup.cur, "function" : "success"});
-        }
-    });
-
-    //fail 버튼 클릭 시
-    $(".fail").click(function(){
-        const curGroup = groups.getGroup(this.value);
-        if(curGroup.state == 0){
-            courseFail(curGroup);
-            undo.add({"group" : this.value, "crsIdx" : curGroup.cur, "function" : "fail"});
-        }
-    });
-
-    $("#undo").click(function(){
-        undo.undo()
-    });
-    $('#redo').click(function(){
-        undo.redo()
-    });
 })
 

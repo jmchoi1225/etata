@@ -1,117 +1,181 @@
-/*
-div{
-    border-collapse: collapse;
-    border : 2px solid blue;
+/******header******/
+.header{
+    width : 100%;
+    height: 80px;
+    margin : 0;
+    padding : 0;
+    border-bottom : 1px solid black;
 }
-*/
-/******top******/
-.topnav{
-    width : 1250px;
-    position : absolute;
-    top : 0;
-    left : 0;
-    background-color: gray;
-}
-.topnav>h1{
-    margin: 20px;
+.header>h1{
+    margin : 0;
+    padding : 8px 0;
     display: block;
+    text-align : center;
+}
+
+/******container******/
+.container{
+    margin: 8px auto;
+    width : 1080px;
+    height : auto;
     text-align : left;
+    overflow : hidden;
 }
 
-/******left******/
-#leftbg{
-    box-sizing:border-box;
-    width: 200px;
-    position: absolute;
-    top : 100px;
-    left : 10px;
-}
-#subject_groups{
-    text-align: left;
-    border-top: 1px solid #444444;
-    border-bottom: 1px solid #444444;
+.timetable{
+    border:0.5px solid gray;
     border-collapse: collapse;
 }
-#subject_groups{
-    background-color: #eeeeee;
+/******leftContainer******/
+.leftColumn{
+    float: left;
+    width : 600px;
 }
-#subject_groups> ul{
-    border-top: 1px solid #444444;
+#groupList{
+    float: left;
+    text-align: center;
+    width : 130px;
+    border: 1px solid black;
+    box-sizing : border-box;
+    margin : 4px;
     border-collapse: collapse;
+    font-size : 15px;
 }
-#mid_w{
-    font-size: medium;
-    
+#groupList>table{
+    border-collapse: collapse;
+    width : 100%;
 }
-#timetable_helper{
-    width: 150px;
-    position: relative;
-    left : 40px;
+#groupList>button{
+    width : 100%;
 }
 
-/******center******/
-#centerbg{
-    box-sizing:border-box;
-    width: 350px;
-    position: absolute;
-    top: 100px;
-    left: 250px;
+#showTimetable{
+    float: right;
+    margin : 4px;
 }
-#main_timetable> table{
-    border:0.5px solid gray;
+
+.bigTimetable{
+    width : 450px;
+    height: 540px;
+    border:1px solid black;
     border-collapse: collapse;
+    text-align : center;
 }
-#main_timetable> td{
-    height: 40px;
-    border:0.5px solid gray;
-    border-collapse: collapse;
+.bigTimetable th{
+    font-size : 12px;
+    text-align : center;
+    border : 1px solid black;
+    width : 20px;
+    height : 20px;
+} 
+.bigTimetable td{
+    font-size : 14px;
+    width : 80px;
+    height : 60px;
 }
-#mt_0{
-    width: 20px;
-    height: 20px;
-    border:0.5px solid gray;
-    border-collapse: collapse;
+.bottomColumn{
+    clear : both;
+    width : 100%;
+    padding: 8px 0;
+    overflow:hidden;
 }
-.mts{
-    width: 60px;
-    height: 20px;
-    border:0.5px solid gray;
-    border-collapse: collapse;
-    font-size: x-small;
+#firstPick{
+    margin : 0 4px;
+    border: 1px solid black;
+    background-color : grey;
+    padding : 8px;
+    float : left;
 }
-.xxs_w{
-    font-size: xx-small;
-    text-align: right;
-    vertical-align: top;
+#selectedTimetables{
+    margin : 0 4px;
+    box-sizing : border-box;
+    width : 450px;
+    float : right;
+    padding : 8px;
+    border: 1px solid black;
+    overflow : auto;
+    background-color : darkgrey;
 }
-#selected_timetable_line>table{
-    margin: 5px;
-    border-collapse: collapse;
-    border:0.5px solid #444444;
+#selectedTimetables>table{
+    margin-right: 5px;
+    float: left;
 }
-#selected_timetable_line>th, td{
+
+#selectedTimetables>th, td{
     height: 10px;
     width : 15px;
     border-collapse: collapse;
     border:0.5px solid #444444;
 }
-/******right******/
-#rightbg{
-    position: absolute;
-    top: 100px;
-    left: 650px;
+/******rightContainer******/
+.rightColumn{
+    float : right;
+    width : 460px;
+}
+#showResults{
+    margin : 4px 0;
+    padding : 0 4px;
     box-sizing : border-box;
-    width : 600px;
+    overflow: auto;
+    width : 100%;
+    border : 1px solid black;
 }
-#timetables> table{
-    margin: 3px;
+#showResults > table{
+    float: left;
+    margin : 4px;
     border-collapse: collapse;
-    border:0.5px solid #444444;
+    border: 1px solid black;
 }
-#timetables> th, td{
+#showResults> th, td{
     height: 8px;
     width : 12px;
     border-collapse: collapse;
     border:0.5px solid #444444;
 }
+#filter{
+    margin : 4px 0;
+    float:right;
+    margin-right: 8px; 
+}
+#conditionsList{
+    float:left;
+    margin : 4px 0;
+    font-size : 14px;
+    border : 1px solid black;
+    box-sizing : border-box;
+    overflow : auto;
+    height : 100px;
+    width : 390px;
+}
+#conditionsList>ul{
+    margin: 4px auto;
+}
+#addCondition{
+    box-sizing:border-box;
+    overflow: hidden;
+    padding: 8px;
+    width : 100%;
+    clear : both;
+    font-size : 14px;
+}
 
+#addCondition > form{
+    clear:both;
+    float: right;
+    text-align : left;
+}
+.checkboxes{
+    border : 1px solid black;
+    display: inline-block;
+    width : 80px;
+    height : 21px;
+    overflow-y: scroll;
+    font-size: 12px;
+    background-color : white;
+}
+#addCondition > form > input{
+    width : 75px;
+}
+#addCondition > form > input[type =submit]{
+    width : 50px;
+}

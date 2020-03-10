@@ -1,14 +1,14 @@
-export default class jsonGroups{
+export default class Groups{
     constructor(){
         this.numGroups = 0;
         this.groups = new Array();
     }
 
-    convert2JSONobj(groups){
-        for(let g = 0; g<groups.getLength(); g++){
-            let curGroup = groups.getGroup(g);
-            let newGroup = new jsonGroup();
-            newGroup.convert2JSONobj(curGroup);
+    convertJSON2obj(jsonInput){
+        for(let g = 0; g<jsonInput["numGroups"]; g++){
+            let curGroup = jsonInput["groups"][g];
+            let newGroup = new Group();
+            newGroup.convertJSON2obj(curGroup);
             this.push(newGroup);
         }
     }
@@ -19,7 +19,7 @@ export default class jsonGroups{
     }
 }
 
-class jsonGroup{
+class Group{
     constructor(name = null, firstIdx = null){
         this.name = name;
         this.firstIdx = firstIdx;
@@ -30,13 +30,13 @@ class jsonGroup{
         }
     }
 
-    convert2JSONobj(group){
-        this.name = group.name;
-        this.firstIdx = group.firstIdx;
+    convertJSON2obj(jsonInput){
+        this.name = jsonInput["name"];
+        this.firstIdx = jsonInput["firstIdx"];
         for(let rank = 0; rank < 3; rank++){
-            for(let idx = 0; idx< group.courses.getLength(rank); idx++){
-                const curCrs = group.getCourse(rank, idx);
-                this.addCrs(rank,new jsonCourse(curCrs.id, curCrs.lecTime));
+            for(let idx = 0; idx< jsonInput["numCrs"][rank]; idx++){
+                const curCrs = jsonInput["courses"][rank][idx];
+                this.addCrs(rank,new Course(curCrs["id"], curCrs["lecTime"]));
             }
         }
     }
@@ -47,7 +47,7 @@ class jsonGroup{
     }
 }
 
-class jsonCourse{
+class Course{
     constructor(id, lecTime){
         this.id = id;
         this.lecTime = lecTime;

@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
         <title>ETATA</title>   
     </head>
 
@@ -13,11 +14,9 @@
         <div class = "container">
             <div class = "leftColumn">
                 <div id= "groupList">
-                    <table>
-                        <tr><th>Groups</th></tr>
-                        <tr><td>Algorithm</td></tr>
-                        <tr><td>Domain</td></tr>
-                    </table>
+                    <h5>Group List</h5>
+                    <hr/>
+                    <div id = "showGroups"></div>
                     <button>수강신청 도우미</button>
                 </div>    
                 <div id="showTimetable">   
@@ -86,224 +85,8 @@
                 </div>
                 <div class = 'bottomColumn'>
                     <div id = "firstPick">
-                        <table class= "timetable">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>   
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </table>
                     </div>
                     <div id= "selectedTimetables">
-                        <table class= "timetable">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>   
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </table>
-                        <table class= "timetable">
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>   
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                        </table>
                     </div>
                 </div>
                     
@@ -311,163 +94,11 @@
             <!--right--> 
             <div class= "rightColumn">
                 <div id= "showResults">
-                    <table>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>   
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>   
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
                 </div>
                 <button id ="filter">Filter</button>
                 <div id= "conditionsList">
-                    <ul>
-                        <li>조건 1</li>
-                        <li>조건 2</li>
-                        <li>조건 3</li>
-                        <li>조건 4</li>
-                        <li>조건 5</li>
-                        <li>조건 6</li>
-                        <li>조건 7</li>
-                    </ul>
                 </div>
+                <button id ="deleteCondition">Delete</button>
                 <div id= "addCondition">
                     <form action = "">
                         <span>특정 교시:</span>
@@ -480,7 +111,7 @@
                             <option value = "E 교시"></option>
                             <option value = "F 교시"></option>
                         </datalist>
-                        <input type="number" min='0' max='10'>
+                        <input type="number" min='0' max='10' name = "num">
                         <input type="text" list="condition" name="condition">
                         <datalist id= "condition">
                             <option value = "이상"></option>
@@ -496,14 +127,42 @@
                             <option value = "Domain"></option>
                         </datalist>
                         <div class="checkboxes">
-                            <input type="checkbox"/> F032 <br/>
-                            <input type="checkbox"/> F033 <br/>
+                            <input type="checkbox" name = "F032"/> F032 <br/>
+                            <input type="checkbox" name = "F033"/> F033 <br/>
                         </div>
                         <input type="text" list="choose" name="choose">
                         <datalist id= "choose">
                             <option value = "선택"></option>
                             <option value = "비선택"></option>
                         </datalist>
+                        <input type="submit" value="추가">
+                    </form>
+                    <form action = "">
+                        <span>공강 요일:</span>
+                        <input type="text" list="day" name="day">
+                        <datalist id= "day">
+                            <option value = "월"></option>
+                            <option value = "화"></option>
+                            <option value = "수"></option>
+                            <option value = "목"></option>
+                            <option value = "금"></option>
+                        </datalist>
+                        <input type="submit" value="추가">
+                    </form>
+                    <form action = "">
+                        <span>우주공강: </span>
+                        <input type="number" min='0' max='4' name = "length">
+                        <span>공강</span><input type="number" min='0' max='15' name = "num">
+                        <span>개</span>
+                        <input type="text" list="condition" name="condition">
+                        <input type="submit" value="추가">
+                    </form>
+                    <form action = "">
+                        <span>연강: </span>
+                        <input type="number" min='0' max='4' name = "length">
+                        <span>연강</span><input type="number" min='0' max='15' name = "num">
+                        <span>개</span>
+                        <input type="text" list="condition" name="condition">
                         <input type="submit" value="추가">
                     </form>
                 </div>

@@ -9,9 +9,8 @@ class Course extends Component{
         const idx= this.props.idx;
         return(
             <button className = "course" value={[groupIdx,rank,idx]}>{course.id}</button>
-        );
+        )
     }
-
 }
 
 class Courses extends Component{
@@ -28,8 +27,7 @@ class Courses extends Component{
                     </div>)
                 })} 
             </div>
-        );
-        
+        )
     }
 }
 

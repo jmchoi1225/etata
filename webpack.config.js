@@ -1,7 +1,7 @@
 module.exports = {
   entry:{
-    index : './src/index.js',
-    registration : './src/registration.js'
+    index : './src/index/index.js',
+    registration : './src/registration/registration.js'
   },
   output:{
       filename: '[name].min.js'

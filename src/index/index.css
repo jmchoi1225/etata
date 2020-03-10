@@ -23,9 +23,33 @@
 }
 
 .timetable{
-    border:0.5px solid gray;
     border-collapse: collapse;
+    text-align: center;
+    height : 110px;
+    width : 75px;
+    display : block;
+    margin-right : 8px;
+    float : left;
 }
+td{
+    border:0.5px solid black;
+}
+.timetable tbody{
+    height : 100%;
+    width : 100%;
+}
+.timetable td{
+    height : 15px;
+    width : 12px;
+}
+.horizontalScroll{
+    height : 110px;
+    width : max-content;
+    overflow-x : auto;
+    overflow-y : hidden;
+    text-align : left;
+}
+
 /******leftContainer******/
 .leftColumn{
     float: left;
@@ -41,13 +65,15 @@
     border-collapse: collapse;
     font-size : 15px;
 }
-#groupList>table{
-    border-collapse: collapse;
-    width : 100%;
+.group{
+    margin : 4px 0;
 }
 #groupList>button{
+    margin-top : 4px;
     width : 100%;
 }
+
+
 
 #showTimetable{
     float: right;
@@ -83,6 +109,8 @@
     margin : 0 4px;
     border: 1px solid black;
     background-color : grey;
+    width : 76px;
+    height : 110px;
     padding : 8px;
     float : left;
 }
@@ -90,49 +118,41 @@
     margin : 0 4px;
     box-sizing : border-box;
     width : 450px;
+    height : 128px;
     float : right;
     padding : 8px;
     border: 1px solid black;
-    overflow : auto;
+    overflow-x : auto;
+    overflow-y :hidden;
     background-color : darkgrey;
+    white-space: nowrap;
 }
 #selectedTimetables>table{
     margin-right: 5px;
     float: left;
 }
 
-#selectedTimetables>th, td{
-    height: 10px;
-    width : 15px;
-    border-collapse: collapse;
-    border:0.5px solid #444444;
-}
 /******rightContainer******/
 .rightColumn{
     float : right;
     width : 460px;
 }
 #showResults{
+    background-color : darkgray;
     margin : 4px 0;
-    padding : 0 4px;
+    padding : 8px;
     box-sizing : border-box;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y:hidden;
     width : 100%;
+    height : 126px;
     border : 1px solid black;
 }
 #showResults > table{
     float: left;
-    margin : 4px;
-    border-collapse: collapse;
-    border: 1px solid black;
+    margin-right : 5px;
 }
-#showResults> th, td{
-    height: 8px;
-    width : 12px;
-    border-collapse: collapse;
-    border:0.5px solid #444444;
-}
-#filter{
+#filter, #deleteCondition{
     margin : 4px 0;
     float:right;
     margin-right: 8px; 
@@ -172,6 +192,8 @@
     overflow-y: scroll;
     font-size: 12px;
     background-color : white;
+    position : relative;
+    top:6px;
 }
 #addCondition > form > input{
     width : 75px;
